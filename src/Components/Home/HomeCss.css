@@ -1,0 +1,46 @@
+.home
+{
+    background-color: black;
+}
+li{
+    color: white;
+    list-style: decimal;
+}
+
+ul li{
+    list-style-type: none;
+    margin:10px;
+    margin-top: 20px;
+}
+
+.logo
+{
+    color: #e50914;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.8em;
+    margin-right: 5px;
+    text-decoration: none;
+
+}
+
+ul li a{
+    color: white;
+    /* font-weight: ; */
+    text-decoration: none;
+    gap: 30px;
+}
+
+.home
+{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo
+{
+    width:200px;
+    height: 100px;
+}
+
