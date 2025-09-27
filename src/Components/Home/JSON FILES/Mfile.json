@@ -1,0 +1,44 @@
+[
+    {
+        "name":"Kumbalangi Nights",
+        "language":"Malayalam",
+        "year":2019,
+        "genres":"Romance/Comedy",
+        "img":"../Asset/photo/Malayalam/KumblangiNights.jpg"
+    },
+    {
+        "name":"Lucky Baskhar",
+        "language":"Malayalam",
+        "year":2024,
+        "genres":"Mystery & Thriller",
+        "img":"../Asset/photo/Malayalam/luckybaskhar.png"
+    },
+    {
+        "name":"Manjummel Boys",
+        "language":"Malayalam",
+        "year":2024,
+        "genres":"Thriller/Drama",
+        "img":"../Asset/photo/Malayalam/Manjummel.jpeg"
+    },
+    {
+        "name":"Premam",
+        "language":"Malayalam",
+        "year":2015,
+        "genres":"Romance/Comedy",
+        "img":"../Asset/photo/Malayalam/premam.jpg"
+    },
+    {
+        "name":"Thudarum",
+        "language":"Malayalam",
+        "year":2025,
+        "genres":"Thriller/Drama",
+        "img":"../Asset/photo/Malayalam/Thudarum.jpeg"
+    },
+    {
+        "name":"Aavesham",
+        "language":"Malayalam",
+        "year":2024,
+        "genres":"Comedy/Action",
+        "img":"../Asset/photo/Malayalam/aavesham.jpg"
+    }
+]

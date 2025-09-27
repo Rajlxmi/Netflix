@@ -1,0 +1,44 @@
+[
+    {
+        "name":"'96",
+        "language":"Tamil",
+        "year":2018,
+        "genres":"Romance/Drama",
+        "img":"../Asset/photo/Tamil/96.jpeg"
+    },
+    {
+        "name":"Kaithi",
+        "language":"Tamil",
+        "year":2019,
+        "genres":"Action/Thriller",
+        "img":"../Asset/photo/Tamil/Kaithi.jpg"
+    },
+    {
+        "name":"Leo",
+        "language":"Tamil",
+        "year":2023,
+        "genres":"Action/Thriller",
+        "img":"../Asset/photo/Tamil/leo.jpeg"
+    },
+    {
+        "name":"Vikram",
+        "language":"Tamil",
+        "year":2022,
+        "genres":"Action/Thriller",
+        "img":"../Asset/photo/Tamil/Vikram.jpeg"
+    },
+    {
+        "name":"Super Deluxe",
+        "language":"Tamil",
+        "year":2019,
+        "genres":"Thriller/Comedy",
+        "img":"../Asset/photo/Tamil/superdeluxe.jpeg"
+    },
+    {
+        "name":"Thalapathi",
+        "language":"Tamil",
+        "year":1991,
+        "genres":"Action/Crime",
+        "img":"../Asset/photo/Tamil/Thalapathi.jpeg"
+    }
+]

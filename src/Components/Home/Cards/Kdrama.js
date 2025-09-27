@@ -1,33 +1,34 @@
-import React from 'react'
-import {useState,useRef,useEffect} from 'react';
-import film from '../Films.json'
+import React, { useState, useRef, useEffect } from 'react';
+import Kfilm from '../JSON FILES/Kfile.json';
+
 const Kdrama = () => {
-    const[films,setFilms]=useState([]);
-    
-  useEffect(()=>{
-    const fetching=()=>{
-        try{
-            setFilms(film);
-            console.log(films);
-        }catch(err){
-            console.log("no films",err);
-        }
+  const [Kfilms, setKFilms] = useState([]);
+  const [hoverIndex, setHoverIndex] = useState(null); // ✅ track which card is hovered
+
+  useEffect(() => {
+    try {
+      setKFilms(Kfilm);
+      console.log(Kfilm);
+    } catch (err) {
+      console.log("no films", err);
     }
-    fetching();
-  },[]);
-    const data=useRef(null);
-        const scrollUp=()=>
-        {
-          data.current.scrollBy({left:-200,behavior:"smooth"});
-        }
-        const scrollDown=()=>{
-          data.current.scrollBy({left:200,behavior:"smooth"});
-        }
+  }, []);
+
+  const data = useRef(null);
+
+  const scrollUp = () => {
+    data.current.scrollBy({ left: -200, behavior: "smooth" });
+  };
+
+  const scrollDown = () => {
+    data.current.scrollBy({ left: 200, behavior: "smooth" });
+  };
 
   return (
     <div>
-      <div style={{position:"relative"}}>
-      <button 
+      <div style={{ position: "relative" }}>
+        {/* Left button */}
+        <button 
       onClick={scrollUp} 
       style={{
         position: "absolute",
@@ -47,50 +48,79 @@ const Kdrama = () => {
         <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
       </svg>
     </button>
-        <div ref={data}
-        style={{
-        width: "1500px",
-        height: "350px",
-        gap: "10px",
-        overflowX: "auto",
-        border: "1px solid black",
-        padding: "10px",
-        display: "flex",
-        zIndex:1,
-        msOverflowStyle: "none",
-        scrollbarWidth: "none"
-      }}
+
+        {/* Card list */}
+        <div
+          ref={data}
+          style={{
+            width: "1500px",
+            height: "350px",
+            gap: "10px",
+            overflowX: "auto",
+            border: "1px solid black",
+            padding: "10px",
+            display: "flex",
+            zIndex: 1,
+            msOverflowStyle: "none",
+            scrollbarWidth: "none",
+          }}
         >
-        {film.map((std,index)=>(
-        
-            <div key={index}>
-                <div class="d-flex">
-            <div class="card" style={{ width: '18rem', height: '23rem', backgroundColor:"black"}}>
-              <img src={std.lsb} alt='img1' style={{margin:'10px'}}/>
-            </div>
-            {/* ...your other card divs stay exactly the same... */}
-            <div class="card" style={{ width: '18rem', height: '23rem', backgroundColor:"black"}}>
-              <img src={std.mg} alt='img1'style={{margin:'10px'}} />
-            </div>
-            <div class="card" style={{ width: '18rem', height: '23rem', backgroundColor:"black"}}>
-              <img src={std.pyh} alt='img1' style={{margin:'10px'}}/>
-            </div>
-            <div class="card" style={{ width: '18rem', height: '23rem', backgroundColor:"black"}}>
-              <img src={std.tb} alt='img1'style={{margin:'10px'}} />
-            </div>
-            <div class="card" style={{ width: '18rem', height: '23rem', backgroundColor:"black"}}>
-              <img src={std.yamd} alt='img1' style={{margin:'10px'}}/>
-            </div>
-            <div class="card" style={{ width: '18rem', height: '23rem', backgroundColor:"black"}}>
-              <img src={std.htcc} alt='img1'style={{margin:'10px'}} />
-            </div>
-          </div>
-            </div>
-        )    
-        )
-                
-            }
-            <button 
+          {Kfilms.map((std, index) => (
+  <div key={index} className="d-flex">
+    <div
+      className="card"
+      style={{
+        position: "relative",
+        width: "18rem",
+        height: "18rem",
+        backgroundColor: "black",
+        overflow: "visible", // allow scaling outside
+        transition: "transform 0.3s ease, z-index 0.3s ease",
+        transform: hoverIndex === index ? "scale(1.2)" : "scale(1)",
+        zIndex: hoverIndex === index ? 5 : 1, // pop above others
+      }}
+      onMouseEnter={() => setHoverIndex(index)}
+      onMouseLeave={() => setHoverIndex(null)}
+    >
+      {/* Image */}
+      <img
+        src={std.img}
+        alt="img1"
+        style={{
+          margin: "10px",
+          width: "calc(100% - 20px)",
+          height: "calc(100% - 20px)",
+          objectFit: "cover",
+          borderRadius: "8px",
+        }}
+      />
+
+      {/* Optional Overlay (like Netflix extra info) */}
+      {hoverIndex === index && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: "10px",
+            left: "10px",
+            right: "10px",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            color: "white",
+            padding: "8px",
+            borderRadius: "5px",
+            fontSize: "14px",
+            textAlign: "center",
+          }}
+        >
+          {std.name || "Movie Title"}
+        </div>
+      )}
+    </div>
+  </div>
+))}
+        </div>
+
+        {/* Right button */}
+        <button 
       onClick={scrollDown} 
       style={{
         position: "absolute",
@@ -110,13 +140,9 @@ const Kdrama = () => {
         <path d="M6 3.204v9.592L11.481 8zm.659-.753 5.48 4.796a1 1 0 0 1 0 1.506l-5.48 4.796A1 1 0 0 1 5 12.796V3.204a1 1 0 0 1 1.659-.753"/>
       </svg>
     </button>
-        </div>       
+      </div>
     </div>
+  );
+};
 
-    </div>
-  )
-}
-
- 
-
-export default Kdrama
+export default Kdrama;

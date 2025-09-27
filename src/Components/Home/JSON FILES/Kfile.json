@@ -1,0 +1,44 @@
+[
+    {
+        "name":"A Love So Beautiful",
+        "language":"K-Drama",
+        "year":2017,
+        "genres":"Romance",
+        "img":"../Asset/photo/K-Drama/LoveSoBeautiful.jpeg"
+    },
+    {
+        "name":"Meteor Garden",
+        "language":"K-Drama",
+        "year":2018,
+        "genres":"Romance",
+        "img":"../Asset/photo/K-Drama/Meteor Garden.jpeg"
+    },
+    {
+        "name":"Put Your Head on My Shoulder",
+        "language":"K-Drama",
+        "year":2019,
+        "genres":"Romance",
+        "img":"../Asset/photo/K-Drama/Put your head.jpeg"
+    },
+    {
+        "name":"True Beauty",
+        "language":"K-Drama",
+        "year":2020,
+        "genres":"Romance",
+        "img":"../Asset/photo/K-Drama/TrueBeauty.jpeg"
+    },
+    {
+        "name":"You are My Destiny",
+        "language":"K-Drama",
+        "year":2020,
+        "genres":"Drama",
+        "img":"../Asset/photo/K-Drama/YouAreMydestiny.jpeg"
+    },
+    {
+        "name":"Hometown Cha-Cha-Cha",
+        "language":"K-Drama",
+        "year":2021,
+        "genres":"Romance",
+        "img":"../Asset/photo/K-Drama/HomeTowncha.jpeg"
+    }
+]

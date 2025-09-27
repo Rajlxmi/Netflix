@@ -1,17 +1,22 @@
 import React from 'react'
 import { useEffect,useState,useRef } from 'react';
-import films from '../Films.json';
+import hfile from '../JSON FILES/hfile.json';
+console.log(hfile);
 function Cards() {
-    const[film,setFilms]=useState([]);
-    const[ind,setIndex]=useState(1);
+    const[hfilm,setHFilms]=useState([]);
+
+        const[show,setShow]=useState(null);
+
+    // const[ind,setIndex]=useState(1);
+    
     useEffect(()=>{
     const fetching=()=>{
     try{
-      console.log(films);
-      setFilms(films);
+      console.log(hfile);
+      setHFilms(hfile);
     }
     catch(err){
-      console.error("eror fetching data",err);
+      console.error("error fetching data",err);
     }
   
   };
@@ -24,13 +29,11 @@ function Cards() {
     const scrollUp=()=>{
         data.current.scrollBy({left:-200,behavior:"smooth"});
     }
-    
   return (
     
   <div style={{ position: "relative" }}>
-    
-    {/* Left Arrow Button */}
-    <button 
+        {/* Left button */}
+        <button 
       onClick={scrollUp} 
       style={{
         position: "absolute",
@@ -51,50 +54,78 @@ function Cards() {
       </svg>
     </button>
 
-    {/* Your Scrollable Cards */}
+        {/* Card list */}
+        <div
+          ref={data}
+          style={{
+            width: "1500px",
+            height: "350px",
+            gap: "10px",
+            overflowX: "auto",
+            border: "1px solid black",
+            padding: "10px",
+            display: "flex",
+            zIndex: 1,
+            msOverflowStyle: "none",
+            scrollbarWidth: "none",
+          }}
+        >
+          {hfilm.map((std, index) => (
+  <div key={index} className="d-flex">
     <div
-      ref={data}
+      className="card"
       style={{
-        width: "1500px",
-        height: "350px",
-        gap: "10px",
-        overflowX: "auto",
-        border: "1px solid black",
-        padding: "10px",
-        display: "flex",
-        msOverflowStyle: "none",
-        scrollbarWidth: "none"
+        position: "relative",
+        width: "18rem",
+        height: "18rem",
+        backgroundColor: "black",
+        overflow: "visible", // allow scaling outside
+        transition: "transform 0.3s ease, z-index 0.3s ease",
+        transform: show === index ? "scale(1.2)" : "scale(1)",
+        zIndex: show === index ? 5 : 1, // pop above others
       }}
+      onMouseEnter={() => setShow(index)}
+      onMouseLeave={() => setShow(null)}
     >
-      {film.map((std, index) => (
-        <div key={index}>
-          <div class="d-flex">
-            <div class="card" style={{ width: '18rem', height: '23rem', backgroundColor:"black"}}>
-              <img src={std.ddlj} alt='img1' style={{margin:'10px'}} />
-            </div>
-            {/* ...your other card divs stay exactly the same... */}
-            <div class="card" style={{ width: '18rem', height: '23rem', backgroundColor:"black" }}>
-              <img src={std.kkkg} alt='img1' style={{margin:'10px'}}/>
-            </div>
-            <div class="card" style={{ width: '18rem', height: '23rem', backgroundColor:"black" }}>
-              <img src={std.ll} alt='img1'  style={{margin:'10px'}}/>
-            </div>
-            <div class="card" style={{ width: '18rem', height: '23rem', backgroundColor:"black" }}>
-              <img src={std.stk} alt='img1' style={{margin:'10px'}} />
-            </div>
-            <div class="card" style={{ width: '18rem', height: '23rem', backgroundColor:"black"}}>
-              <img src={std.yjyd} alt='img1' style={{margin:'10px'}} />
-            </div>
-            <div class="card" style={{ width: '18rem', height: '25rem', backgroundColor:"black" }}>
-              <img src={std.rnbdj} alt='img1' style={{margin:'10px'}} />
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
+      {/* Image */}
+      <img
+        src={std.img}
+        alt="img1"
+        style={{
+          margin: "10px",
+          width: "calc(100% - 20px)",
+          height: "calc(100% - 20px)",
+          objectFit: "cover",
+          borderRadius: "8px",
+        }}
+      />
 
-    {/* Right Arrow Button */}
-    <button 
+      {/* Optional Overlay (like Netflix extra info) */}
+      {show === index && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: "10px",
+            left: "10px",
+            right: "10px",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            color: "white",
+            padding: "8px",
+            borderRadius: "5px",
+            fontSize: "14px",
+            textAlign: "center",
+          }}
+        >
+          {std.name || "Movie Title"}
+        </div>
+      )}
+    </div>
+  </div>
+))}
+        </div>
+
+        {/* Right button */}
+        <button 
       onClick={scrollDown} 
       style={{
         position: "absolute",
@@ -114,8 +145,7 @@ function Cards() {
         <path d="M6 3.204v9.592L11.481 8zm.659-.753 5.48 4.796a1 1 0 0 1 0 1.506l-5.48 4.796A1 1 0 0 1 5 12.796V3.204a1 1 0 0 1 1.659-.753"/>
       </svg>
     </button>
-
-  </div>
+      </div>
 );
 
 

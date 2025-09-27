@@ -1,0 +1,44 @@
+[
+    {
+        "name":"Dilwale Dulhania Le Jayenge",
+        "language":"Hindi",
+        "year":1995,
+        "genres":"Romance/Musical",
+        "img":"../Asset/photo/Hindi/DilwaleDulhaniyaLeJayenge.jpeg"
+    },
+    {
+        "name":"Kabhi Khushi Kabhie Gham",
+        "language":"Hindi",
+        "year":2001,
+        "genres":"Musical/Romance",
+        "img":"../Asset/photo/Hindi/KabhiKushiKabhiGum.jpeg"
+    },
+    {
+        "name":"Laapataa Ladies",
+        "language":"Hindi",
+        "year":2023,
+        "genres":"Comedy/Drama",
+        "img":"../Asset/photo/Hindi/lappatta_ladies.jpeg"
+    },
+    {
+        "name":"Sanam Teri Kasam",
+        "language":"Hindi",
+        "year":2016,
+        "genres":"Romance/Musical",
+        "img":"../Asset/photo/Hindi/SanamTeriKasam.jpeg"
+    },
+    {
+        "name":"Yeh Jawaani Hai Deewani",
+        "language":"Hindi",
+        "year":2013,
+        "genres":"Romance/Comedy",
+        "img":"../Asset/photo/Hindi/YehJawaniYehDiwani.jpeg"
+    },
+    {
+        "name":"Rab Ne Bana Di Jodi",
+        "language":"Hindi",
+        "year":2008,
+        "genres":"Romance/Comedy",
+        "img":"../Asset/photo/Hindi/RabNeBanaDiJodi.jpeg"
+    }
+]
